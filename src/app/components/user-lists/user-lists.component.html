@@ -1,0 +1,18 @@
+<section class="container-fluid">
+    <h3 class="text-center">GitHub Users List</h3>
+    <div class="form-group">
+        <input type="text" class="form-control input-search mx-auto" placeholder="Search By Username"
+            [(ngModel)]="search">
+    </div>
+    <div class="row" *ngIf="users">
+        <div class="col-md-3" *ngFor="let user of users | async| filter:search">
+            <div class="card-container">
+                <a routerLink="/{{user.login}}">
+                    <div class="card">
+                        <span class="user_name">{{user.login}}</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,16 @@
+<section class="container-fluid">
+    <div class="col-md-12 p-4" *ngIf="user">
+        <h2 class="text-center user_name">Github
+            <span>{{user.login}}'s</span>
+            Respository List
+        </h2>
+        <div style="margin: 0 25% auto;">
+            <ul class="pt-3">
+                <li *ngFor="let repo of repos">
+                    <div class="p-2 Repo_name">{{repo.name}}</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</section>
